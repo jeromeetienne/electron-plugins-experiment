@@ -2,8 +2,9 @@
         "main": "index.js",
         "scripts": {
                 "configure": "node-gyp configure",
-                "build": "node-gyp build",
+                "build": "HOME=~/.electron-gyp node_modules/.bin/node-gyp rebuild --target=1.4.15  --arch=ia64 --dist-url=https://atom.io/download/atom-shell",
                 "test": "mocha",
+                "clean": "rm -rf build/ node_modules/",
                 "start": "electron electron-app/main.js"
         },
         "devDependencies": {
