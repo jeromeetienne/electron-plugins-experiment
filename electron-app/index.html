@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <meta charset="UTF-8">
-        <title>Hello World!</title>
-</head>
 <body>
-        <h1>Hello World!</h1>
-        We are using node <script>document.write(process.versions.node)</script>,
-        Chrome <script>document.write(process.versions.chrome)</script>,
-        and Electron <script>document.write(process.versions.electron)</script>.
+We are using node <script>document.write(process.versions.node)</script>,
+Chrome <script>document.write(process.versions.chrome)</script>,
+and Electron <script>document.write(process.versions.electron)</script>.
         
-        <script>
-        var NativeExtension = require('../NativeExtension');
-        console.log('string from native-apps: ', NativeExtension.aString())
-        </script>
+<script>
+var NativeExtension = require('../NativeExtension');
+
+var startedAt = performance.now()
+// console.time('callingCpp');
+var total = 0
+for(var i = 0; i < 1000000; i++){
+        total += NativeExtension.aNumber()
+}
+// console.timeEnd('callingCpp');
+var lastedFor = performance.now() - startedAt
+
+console.log(lastedFor/1000000 + 'ms per call')
+</script>
 </body>
-</html>

@@ -5,8 +5,6 @@ NAN_METHOD(nothing) {
 }
 
 NAN_METHOD(aString) {
-        time_t  timev;
-        time(&timev);
         info.GetReturnValue().Set(Nan::New("This is a thing.").ToLocalChecked());
 }
 
@@ -14,8 +12,15 @@ NAN_METHOD(aBoolean) {
         info.GetReturnValue().Set(false);
 }
 
+// NAN_METHOD(aNumber) {
+//         info.GetReturnValue().Set(1.75);
+// }
+
 NAN_METHOD(aNumber) {
-        info.GetReturnValue().Set(1.75);
+        time_t now;
+        now = time(0);
+        // printf ("sizeof time_t is: %lu\n", sizeof(time_t));
+        info.GetReturnValue().Set((double)now);
 }
 
 NAN_METHOD(anObject) {
