@@ -2,7 +2,7 @@
     "targets": [
         {
             "target_name": "NativeExtension",
-            "sources": [ "NativeExtension.cc", "functions.cc" ],
+            "sources": [ "NativeExtension/NativeExtension.cc", "NativeExtension/functions.cc" ],
             "include_dirs" : [
  	 			"<!(node -e \"require('nan')\")"
 			]

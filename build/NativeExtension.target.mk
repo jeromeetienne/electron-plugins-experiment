@@ -97,8 +97,8 @@ INCS_Release := \
 	-I$(srcdir)/node_modules/nan
 
 OBJS := \
-	$(obj).target/$(TARGET)/NativeExtension.o \
-	$(obj).target/$(TARGET)/functions.o
+	$(obj).target/$(TARGET)/NativeExtension/NativeExtension.o \
+	$(obj).target/$(TARGET)/NativeExtension/functions.o
 
 # Add to the list of files we specially track dependencies for.
 all_deps += $(OBJS)

@@ -3,7 +3,8 @@
         "scripts": {
                 "configure": "node-gyp configure",
                 "build": "node-gyp build",
-                "test": "mocha"
+                "test": "mocha",
+                "start": "electron electron-app/main.js"
         },
         "devDependencies": {
                 "nan": "^2.0.5",

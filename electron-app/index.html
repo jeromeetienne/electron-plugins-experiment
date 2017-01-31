@@ -11,8 +11,8 @@
         and Electron <script>document.write(process.versions.electron)</script>.
         
         <script>
-                var NativeExtension = require('bindings')('NativeExtension');
-                console.dir(NativeExtension)
+                var NativeExtension = require('../NativeExtension');
+                console.log('string from native-apps: ', NativeExtension.aString())
         </script>
 </body>
 </html>
